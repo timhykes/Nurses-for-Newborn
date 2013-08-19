@@ -8,6 +8,7 @@
 						'events',
 						'giving',
 						'services-programs',
+						'outcomes'
 						))) 
 						{ ?>
 <div id="secondary" class="widget-area sidebar-style" role="complementary">
