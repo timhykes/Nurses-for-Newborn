@@ -13,7 +13,9 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">
+<?php get_template_part( 'content', 'banner' ); ?>
+this is home.php
+	<div id="primary" class="content-area page-content-sections">
 		<main id="main" class="site-main" role="main">
 
 		<?php if ( have_posts() ) : ?>
@@ -21,11 +23,19 @@ get_header(); ?>
 			<?php /* Start the Loop */ ?>
 			<?php while ( have_posts() ) : the_post(); ?>
 
+				<section class="single-post-image">
+					<?php if ( has_post_thumbnail() ) {
+					the_post_thumbnail();
+					} 
+					?>
+				</section >
+
 				<?php
 					/* Include the Post-Format-specific template for the content.
 					 * If you want to overload this in a child theme then include a file
 					 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
 					 */
+
 					get_template_part( 'content', get_post_format() );
 				?>
 
@@ -43,4 +53,6 @@ get_header(); ?>
 	</div><!-- #primary -->
 
 <?php get_sidebar(); ?>
+
+<section class="clear"></section>
 <?php get_footer(); ?>

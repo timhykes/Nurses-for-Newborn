@@ -8,14 +8,15 @@
  */
 
 get_header(); ?>
+<?php get_template_part( 'content', 'banner' ); ?>
 
-	<section id="primary" class="content-area">
+	<section id="primary" class="content-area page-content-sections">
 		<main id="main" class="site-main" role="main">
 
 		<?php if ( have_posts() ) : ?>
 
 			<header class="page-header">
-				<h1 class="page-title">
+				<h1 class="page-title title-styles">
 					<?php
 						if ( is_category() ) :
 							single_cat_title();
@@ -99,4 +100,6 @@ get_header(); ?>
 	</section><!-- #primary -->
 
 <?php get_sidebar(); ?>
+
+<section class="clear"></section>
 <?php get_footer(); ?>

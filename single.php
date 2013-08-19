@@ -6,8 +6,9 @@
  */
 
 get_header(); ?>
+<?php get_template_part( 'content', 'banner' ); ?>
 
-	<div id="primary" class="content-area">
+	<div id="primary" class="content-area page-content-sections">
 		<main id="main" class="site-main" role="main">
 
 		<?php while ( have_posts() ) : the_post(); ?>
@@ -28,4 +29,6 @@ get_header(); ?>
 	</div><!-- #primary -->
 
 <?php get_sidebar(); ?>
+
+<section class="clear"></section>
 <?php get_footer(); ?>

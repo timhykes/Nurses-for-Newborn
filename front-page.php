@@ -38,7 +38,7 @@ get_header(); ?>
 		<header>
 
 		<p>Nurses for Newborns exists to provide a safety net for families most at-risk in order to prevent infant mortality, child abuse and neglect by providing in-home nursing visits which promote healthcare, education, and positive parenting skills. Nurses for Newborns provides services to babies who are born</p>
-		<a href="#"><img src="<?php echo bloginfo('template_directory') .'/images/read_more.svg';?>"/></a>
+		<a href="about"><img src="<?php echo bloginfo('template_directory') .'/images/read_more.svg';?>"/></a>
 	</article><!-- end articles -->
 
 	<article id="donate" class="float_left">
@@ -48,10 +48,12 @@ get_header(); ?>
 		<header>
 
 		<p>Your financial support ensures that Nurses for Newborns can continue to transform children from positions of crisis and despair into positions of safety and hope. We are grateful for your generosity. </p>
-		<a href="#"><img src="<?php echo bloginfo('template_directory') . '/images/read_more.svg';?>"/></a>
+		<a href="donate"><img src="<?php echo bloginfo('template_directory') . '/images/donate.svg';?>"/></a>
 	<article><!-- end articles -->
 
 </section><!-- end featured section -->
+
+<section class="clear"></section>
 
 <?php if ( have_posts() ) : ?>
 
@@ -59,44 +61,51 @@ get_header(); ?>
 			<?php while ( have_posts() ) : the_post(); ?>
 
 
-<section id="current-news">
+<section id="current-news clear">
 	<header class="home-divider-heading">
-		<h1>Current News</h1><hr>
+		<h1>Current News<img src="<?php echo bloginfo('template_directory') . '/images/dots.gif'; ?>"></h1>
 	</header>
 
 	<article class="missouri-news float_left overflow_hidden">
-		<header class="news-header float_left">
-			<h3>Missouri</h3>
-		</header>
-
+		<h3 class="news-heading">MISSOURI NEWS</h3>
+		<img class="news-img float_left" src="<?php echo bloginfo('template_directory').'/images/image2.jpg' ;?>">
 		<h4>Our New Website</h4>
-		<strong>Posted by: admin | 07/10/13</strong>
+		<h5>Posted by: admin | 07/10/13</h5>
 		<p>Commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
-		READ MORE >></p>
-		<img src="">
-	</article>
+		READ MORE >> </p>
+		
+	</article><!-- end missouri news article -->
 
 	<article class="tennessee-news float_left overflow_hidden">
-		<header class="news-header float_left">
-			<h3>Tennessee</h3>
-		</header>
-
-	</article>
-
-
+			<h3 class="news-heading">TENNESSEE NEWS</h3>
+			<img class="news-img float_left" src="<?php echo bloginfo('template_directory').'/images/image3.jpg' ;?>">
+		
+		<h4>Open House</h4>
+		<h5>Posted by: admin | 07/10/13</h5>
+		<p>Commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
+		READ MORE >> </p>
+		
+	</article><!-- end tennessee news article -->
 </section> <!-- end current news -->
+<section class="clear"></section>
+
+<section class="featured-events ">
+	<header class="home-divider-heading">
+		<h1>Events<img src="<?php echo bloginfo('template_directory') . '/images/dots.gif'; ?>"></h1>
+	</header>
+
+<img class="news-img float_left" src="<?php echo bloginfo('template_directory').'/images/image4.jpg' ;?>">
+	<h4>Bob Mattler Memorial Golf Tournament "For the Babies"</h4>
+	<h5>Posted by: admin | 07/05/13</h5>
+	<p>12:30 Lunch, 1:30 Shotgun Start. $125 includes lunch, beverages, 18 hole green fee, and cart.Team and sponsorship opportunities available. READ MORE >> </p>
+
+</section><!-- end featured events section -->
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
 		
-				<?php
-					/* Include the Post-Format-specific template for the content.
-					 * If you want to overload this in a child theme then include a file
-					 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-					 */
-					get_template_part( 'content', get_post_format() );
-				?>
+				
 
 			<?php endwhile; ?>
 
@@ -110,6 +119,6 @@ get_header(); ?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
-
-
+<section class="clear"></section>
+</div><!-- #content -->
 <?php get_footer(); ?>

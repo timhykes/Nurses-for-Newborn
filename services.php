@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying all pages.
+ * Template Name: Services
  *
  * This is the template that displays all pages by default.
  * Please note that this is the WordPress construct of pages
@@ -18,7 +18,17 @@ get_header(); ?>
 	<div id="primary" class="content-area page-content-sections">
 		<main id="main" class="site-main" role="main">
 
-			<?php while ( have_posts() ) : the_post(); ?>
+			<?php 
+				
+				$args = array(
+				'post_type' => 'services & programs'
+				);
+				
+				$the_query = new WP_Query( $args );
+				
+				?>
+
+			<?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
 			<?php get_template_part( 'content', 'page' ); ?>
 
 				<section>

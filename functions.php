@@ -39,7 +39,8 @@ function nfn_setup() {
 	 *
 	 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
 	 */
-	//add_theme_support( 'post-thumbnails' );
+	add_theme_support( 'post-thumbnails' );
+	set_post_thumbnail_size( 640, 427, true ); // default Post Thumbnail dimensions (cropped)
 
 	/**
 	 * This theme uses wp_nav_menu() in one location.
@@ -105,6 +106,30 @@ add_action( 'wp_enqueue_scripts', 'nfn_scripts' );
  * Implement the Custom Header feature.
  */
 //require get_template_directory() . '/inc/custom-header.php';
+
+/**
+ * Custom Widgets.
+ */
+add_action('widgets_init', 'widgets_setup');
+function widgets_setup() {
+
+    $before_widget = '<div class="box widget_box">';
+    $after_widget = '</div>';
+
+    register_sidebar( array(
+        'name' => __('Donate'),
+        'id' => 'post-donate',
+        'before_widget' => $before_widget,
+        'after_widget' => $after_widget
+    ));
+
+     register_sidebar( array(
+        'name' => __('Volunteer'),
+        'id' => 'post-volunteer',
+        'before_widget' => $before_widget,
+        'after_widget' => $after_widget
+    ));
+ }    
 
 /**
  * Custom template tags for this theme.

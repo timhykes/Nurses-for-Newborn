@@ -5,6 +5,12 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+	<section class="single-post-image">
+		<?php if ( has_post_thumbnail() ) {
+			the_post_thumbnail();
+		} 
+		?>
+	</section >
 	<header class="entry-header">
 		<h1 class="entry-title"><?php the_title(); ?></h1>
 
